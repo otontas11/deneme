@@ -1,10 +1,14 @@
 <template>
-$END$
+
+  <v-main>
+    <div>profile</div>
+  </v-main>
+
 </template>
 
 <script>
 export default {
-name: "index"
+  name: 'index'
 }
 </script>
 

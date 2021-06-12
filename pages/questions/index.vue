@@ -1,10 +1,12 @@
 <template>
-$END$
+  <v-main>
+    <div>questions</div>
+  </v-main>
 </template>
 
 <script>
 export default {
-name: "index"
+  name: 'index'
 }
 </script>
 

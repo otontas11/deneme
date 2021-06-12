@@ -1,43 +1,33 @@
 <template>
-  <v-footer dark padless >
-    <v-card class='flex primary' flat  tile height='176'>
-      <v-card-title >
-        <strong class='subheading'>Get connected with us on social networks!</strong>
+  <v-footer dark padless style='top: 100%'>
 
-        <v-spacer></v-spacer>
+    <v-card class='d-flex primary' flat tile
+            :height="$vuetify.breakpoint.mdAndUp?'176':'48'"
+            width='100%'>
 
-        <v-btn v-for='icon in icons'
-               :key='icon'
-               class='mx-4'
-               dark
-               icon  >
-          <v-icon size='24px'>
-            {{ icon }}
-          </v-icon>
-        </v-btn>
-      </v-card-title>
+      <v-container class='d-flex align-center justify-space-between px-0 px-md-3'>
+        <client-only>
 
+          <app-header-logo v-if='$vuetify.breakpoint.mdAndUp' />
+          <app-header-nav-menu />
+
+          <icons v-if='$vuetify.breakpoint.mdAndUp' />
+
+        </client-only>
+      </v-container>
 
     </v-card>
   </v-footer>
 </template>
 
 <script>
+import Icons from '~/components/global/socialMedia/Icons'
+
 export default {
   name: 'index',
-  data() {
-    return {
-      icons: [
-        'mdi-facebook',
-        'mdi-twitter',
-        'mdi-linkedin',
-        'mdi-instagram'
-      ]
-    }
+  components: {
+    Icons
   }
+
 }
 </script>
-
-<style scoped>
-
-</style>
