@@ -1,10 +1,12 @@
 <template>
-$END$
+  <v-main>
+    <div>courses</div>
+  </v-main>
 </template>
 
 <script>
 export default {
-name: "index"
+  name: 'index'
 }
 </script>
 
