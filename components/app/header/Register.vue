@@ -127,11 +127,12 @@
 
 <script>
 import formValidations from '~/mixin/login/formValidations'
+import {togglePassword} from '~/mixin/togglelPassword'
 
 export default {
   name: 'Login',
 
-  mixins: [formValidations],
+  mixins: [formValidations,togglePassword],
 
   data() {
     return {
@@ -146,8 +147,6 @@ export default {
       },
       tab: 0,
       items: ['Login', 'SignUp'],
-      passwordCheckType: 'password',
-      passwordType: 'password',
       dialog: false
     }
   },
@@ -175,14 +174,8 @@ export default {
         this.tab = 1
       else
         this.tab = 0
-    },
-
-    changeType(field) {
-      this[`${field}Type`] = this.typePassword(field) ? 'text' : 'password'
-    },
-    typePassword(field) {
-      return this[`${field}Type`] === 'password'
     }
+
   }
 }
 </script>

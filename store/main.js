@@ -18,7 +18,7 @@ export const state = () =>  ({
   ],
   profileMenu: [
     {
-      path: '/profile',
+      path: '/profile/',
       name: 'profile.settings'
     },
     {

@@ -1,17 +1,16 @@
 <template>
   <v-card elevation='6' rounded='lg' class='mb-3'>
     <div class='pa-6 whiteBackground'>
-      <span class='d-block text-uppercase caption font-weight-500'>Welcome</span>
-      <span class='d-block  font-weight-700'>Muhammed Ali</span>
+      <span class='d-block text-uppercase caption font-weight-500'>{{ $t('welcome') }}</span>
+      <span class='d-block  font-weight-700'>{{ name }}</span>
 
     </div>
     <v-list flat class='px-6 pb-6'>
 
       <template v-for='(menu, i) in profileMenu'>
-        <v-card outlined class='gray'>
+        <v-card flat class='userCard'>
           <v-list-item :to='localePath(menu.path, $i18n.locale)' exact
-                       @click='addBorder'
-                       class='px-0' active-class='primary--text' :key='`user-menu-${i}`'>
+                        exact-active-class='gray' :key='`user-menu-${i}`'>
 
             <v-list-item-content>
               <v-list-item-title v-text='$t(menu.name)' />
@@ -31,11 +30,13 @@
 </template>
 
 <script>
+
 export default {
   name: 'UserCard',
-  data(){
-    return{
-      isSelected:false
+  data() {
+    return {
+      name:'Enes Aktaş',
+      isSelected: false
     }
   },
 
@@ -43,11 +44,12 @@ export default {
     profileMenu() {
       return this.$store.state.main.profileMenu
     }
-  },
-  methods:{
-    addBorder(){
-
-    }
   }
 }
 </script>
+
+<style lang='scss' scoped>
+.userCard {
+  border: none !important;
+}
+</style>

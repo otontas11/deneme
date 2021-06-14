@@ -110,6 +110,16 @@ u, .text-underline {
 
 #__nuxt .v-application {
 
+  [class^="col"], [class*="col"], [class*="col-"] {
+    padding-top: initial !important;
+    padding-bottom: initial !important;
+  }
+
+  [class*="row"] {
+    margin-top: initial !important;
+    margin-bottom: initial !important;
+  }
+
   .v-application--wrap{
     max-width: initial!important;
   }
@@ -117,6 +127,10 @@ u, .text-underline {
     border-radius: 8px;
     border: 1px solid #EBEEF3;
     box-shadow: initial;
+  }
+
+  .v-input__icon {
+    height: 10px;
   }
   .v-btn{
     border-radius: 6px;
@@ -134,6 +148,12 @@ u, .text-underline {
   .theme--light.v-btn.v-btn--outlined.v-btn--text{
     border: 1px solid #aaaaaa  !important;
     min-height: 40px !important;
+  }
+
+  .v-text-field--outlined {
+    .v-label {
+      top: 10px;
+    }
   }
 
 
