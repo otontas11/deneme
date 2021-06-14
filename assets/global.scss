@@ -16,22 +16,6 @@ u, .text-underline {
   text-decoration: underline !important;
 }
 
-.container, [class^="col"], [class*="col"], [class*="col-"] {
-  padding-top: initial !important;
-  padding-bottom: initial !important;
-}
-
-[class*="row"] {
-  margin-top: initial !important;
-  margin-bottom: initial !important;
-}
-
-.container-xl {
-  @media (max-width: 1265px) {
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-}
 
 .fill-width {
   width: 100%;
@@ -91,6 +75,23 @@ u, .text-underline {
   }
 }
 
+.font{
+  &-weight{
+    &-500{
+      font-weight: 500;
+    }
+    &-600{
+      font-weight: 600;
+    }
+    &-700{
+      font-weight: 700;
+    }
+    &-800{
+      font-weight: 800;
+    }
+  }
+}
+
 .lh-auto {
   line-height: 1.5em;
 }
@@ -101,6 +102,9 @@ u, .text-underline {
 
 .pointer {
   cursor: pointer;
+}
+.whiteBackground{
+  background: #F8F9FB;
 }
 
 

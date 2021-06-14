@@ -6,6 +6,7 @@
     <template #activator='{ on, attrs }'>
       <v-btn :outlined='$vuetify.breakpoint.mdAndUp'
              :rounded='$vuetify.breakpoint.smAndDown'
+             :height='40'
              class='px-1 px-md-4 ml-md-4 primary' min-width='36'
              v-bind='attrs' v-on='on' dark text>
 
@@ -158,7 +159,10 @@ export default {
 
       try {
         if (!this.$v.form.$anyError) {
-          alert('tmm')
+
+          this.$router.push(this.localePath('profile',this.$i18n.locale))
+          this.dialog=false
+
         }
 
       } catch (e) {

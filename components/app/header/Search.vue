@@ -48,7 +48,6 @@ export default {
   },
   methods: {
     querySelections(v) {
-      // Simulated ajax query
       setTimeout(() => {
         this.items = this.states.filter(e => {
           return (e || '').toLowerCase().indexOf((v || '').toLowerCase()) > -1
@@ -63,4 +62,5 @@ export default {
 .v-autocomplete__content .v-list__tile{
   height: 30px!important;
 }
+
 </style>
