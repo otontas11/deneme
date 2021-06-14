@@ -15,12 +15,13 @@ import {
 
 const validations = {
   mixins: [validationMixin, globalValidations],
+
   validations() {
     return {
       form: {
-        name: {
+        nameSurname: {
           required: requiredIf(function() {
-            return this.form.tab === 0
+            return this.tab === 1
           }),
           maxLength: maxLength(100),
           correct: function(name) {
@@ -28,25 +29,36 @@ const validations = {
           }
         },
         email: {
-          required,
+          required: requiredIf(function() {
+            return this.tab === 0
+          }),
+          email
+        },
+        newEmail: {
+          required: requiredIf(function() {
+            return this.tab === 1
+          }),
           email
         },
         password: {
-          required,
+          required: requiredIf(function() {
+            return this.tab === 0
+          }),
           minLength: minLength(8)
         },
         newPassword: {
           required: requiredIf(function() {
-            return this.form.tab === 1
+            return this.tab === 1
           }),
           minLength: minLength(8),
-          containsNumber: function(value) {
+       /*   containsNumber: function(value) {
             return /^(?=.*\d)(?=.*[a-zA-Z])(?!.*\s).*$/.test(value)
-          }
+          }*/
         },
+
         passwordCheck: {
           required: requiredIf(function() {
-            return this.form.tab === 1
+            return this.tab === 1
           }),
           sameAs: sameAs('newPassword')
         }
@@ -57,38 +69,43 @@ const validations = {
 
   computed: {
 
-    nameErrors() {
-      const errors = []
-      if (!this.$v.form.name.$dirty) return errors
-      !this.$v.form.name.required && errors.push(this.$t('messages.requiredField'))
-      !this.$v.form.name.maxLength && errors.push('En fazla 100 karakter girilebilir!')
-      !this.$v.form.name.correct && errors.push('Sadece harf girebilirsiniz!')
-      return errors
-    },
-
     emailErrors() {
       const errors = []
       if (!this.$v.form.email.$dirty) return errors
-      !this.$v.form.email.required && errors.push(this.$t('messages.requiredField'))
-      !this.$v.form.email.email && errors.push('Email formatı doğru değil!')
+      !this.$v.form.email.required && errors.push(this.$t('validations.requiredField'))
+      !this.$v.form.email.email && errors.push(this.$t('validations.mailFormatWrong'))
+      return errors
+    },
+    newEmailErrors() {
+      const errors = []
+      if (!this.$v.form.newEmail.$dirty) return errors
+      !this.$v.form.newEmail.required && errors.push(this.$t('validations.requiredField'))
+      !this.$v.form.newEmail.email && errors.push(this.$t('validations.mailFormatWrong'))
       return errors
     },
 
+    nameSurnameErrors() {
+      const errors = []
+      if (!this.$v.form.nameSurname.$dirty) return errors
+      !this.$v.form.nameSurname.required && errors.push(this.$t('validations.requiredField'))
+      !this.$v.form.nameSurname.maxLength && errors.push('En fazla 100 karakter girilebilir!')
+      !this.$v.form.nameSurname.correct && errors.push('Sadece harf girebilirsiniz!')
+      return errors
+    },
     passwordErrors() {
       const errors = []
       if (!this.$v.form.password.$dirty) return errors
       !this.$v.form.password.required && errors.push('Mevcut şifrenizi girin!')
-      !this.$v.form.password.minLength && errors.push('Şifreniz en az 8 karakterden oluşmalı !')
-      !this.$v.form.password.isValid && errors.push('Mevcut şifre ile yeni şifre  aynı olmamalı !')
+      !this.$v.form.password.minLength && errors.push(this.$t('validations.minCharacter', { n: 8 }))
       return errors
     },
 
     newPasswordErrors() {
       const errors = []
       if (!this.$v.form.newPassword.$dirty) return errors
-      !this.$v.form.newPassword.required && errors.push(this.$t('messages.requiredField'))
-      !this.$v.form.newPassword.minLength && errors.push('En az 8 karakter girilmeli!')
-      !this.$v.form.newPassword.containsNumber && errors.push('Şifreniz en az 8 karakterden oluşmalı ve en az bir harf ve rakam içermelidir!')
+      !this.$v.form.newPassword.required && errors.push(this.$t('validations.requiredField'))
+      !this.$v.form.newPassword.minLength && errors.push(this.$t('validations.minCharacter', { n: 8 }))
+     // !this.$v.form.newPassword.containsNumber && errors.push('Şifreniz en az 8 karakterden oluşmalı ve en az bir harf ve rakam içermelidir!')
 
       return errors
     },
@@ -97,7 +114,7 @@ const validations = {
       const errors = []
       if (!this.$v.form.passwordCheck.$dirty) return errors
       !this.$v.form.passwordCheck.required && errors.push('Şifrenizi tekrar girin!')
-      !this.$v.form.passwordCheck.sameAs && errors.push('Lütfen şifrenizi aynı giriniz!')
+      !this.$v.form.passwordCheck.sameAs && errors.push('Şifreler aynı değil!')
       return errors
     }
 

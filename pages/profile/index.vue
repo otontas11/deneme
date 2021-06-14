@@ -1,10 +1,18 @@
 <template>
-$END$
+
+<div>
+  <settings/>
+</div>
+
 </template>
 
 <script>
-export default {
-name: "index"
+ import Settings from '@/components/page/profile/account/Settings'
+ export default {
+  name: 'index',
+  components:{
+    Settings
+  }
 }
 </script>
 

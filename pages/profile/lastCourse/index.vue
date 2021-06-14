@@ -1,10 +1,10 @@
 <template>
-$END$
+<div>Last Course</div>
 </template>
 
 <script>
 export default {
-name: "index"
+  name: 'profile-last-course'
 }
 </script>
 

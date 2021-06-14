@@ -1,9 +1,6 @@
-@import "mixins";
+// Ref: https://github.com/nuxt-community/vuetify-module#customvariables
+//
+// The variables you want to modify
+// $font-size-root: 20px;
 
-:root{
-    --shadow-color: rgba(0,0,0,.17)
-}
 
-$positions: 'relative', 'absolute', 'fixed', 'sticky';
-$directions: 'top', 'bottom', 'left', 'right';
-$queries: ['sm' 600, 'md' 960, 'lg' 1260, 'xl' 1440];
