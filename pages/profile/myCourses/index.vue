@@ -1,12 +1,12 @@
 <template>
-  <v-main>
-    <div>courses</div>
-  </v-main>
+<div>
+  my courses
+</div>
 </template>
 
 <script>
 export default {
-  name: 'index'
+  name: 'profile-my-courses'
 }
 </script>
 

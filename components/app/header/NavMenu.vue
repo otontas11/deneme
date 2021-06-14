@@ -8,7 +8,8 @@
              exact-active-class='secondary--text'
              class='mainNav ' rounded text plain>
 
-        <v-icon v-text='` mdi-${menu.icon}` ' :size='18' />
+        <v-icon v-text='` mdi-${menu.icon}` ' :size='18'
+                :class="$vuetify.breakpoint.smAndUp?'mr-2':''"/>
 
         <span class='caption text-uppercase '> {{ $t(menu.name) }} </span>
 
@@ -74,7 +75,6 @@ export default {
     span {
       display: flex;
       flex-direction: column;
-      flex: 1 1 auto;
     }
   }
 

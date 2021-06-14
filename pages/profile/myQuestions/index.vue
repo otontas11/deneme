@@ -1,12 +1,12 @@
 <template>
-
-
-
+<div>
+  my questions
+</div>
 </template>
 
 <script>
 export default {
-  name: 'index'
+  name: 'profile-my-questions'
 }
 </script>
 

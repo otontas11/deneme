@@ -34,7 +34,7 @@ const validations = {
           }),
           email
         },
-        newMail: {
+        newEmail: {
           required: requiredIf(function() {
             return this.tab === 1
           }),
@@ -51,9 +51,9 @@ const validations = {
             return this.tab === 1
           }),
           minLength: minLength(8),
-          containsNumber: function(value) {
+       /*   containsNumber: function(value) {
             return /^(?=.*\d)(?=.*[a-zA-Z])(?!.*\s).*$/.test(value)
-          }
+          }*/
         },
 
         passwordCheck: {
@@ -78,9 +78,9 @@ const validations = {
     },
     newEmailErrors() {
       const errors = []
-      if (!this.$v.form.newMail.$dirty) return errors
-      !this.$v.form.newMail.required && errors.push(this.$t('validations.requiredField'))
-      !this.$v.form.newMail.email && errors.push(this.$t('validations.mailFormatWrong'))
+      if (!this.$v.form.newEmail.$dirty) return errors
+      !this.$v.form.newEmail.required && errors.push(this.$t('validations.requiredField'))
+      !this.$v.form.newEmail.email && errors.push(this.$t('validations.mailFormatWrong'))
       return errors
     },
 
@@ -104,8 +104,8 @@ const validations = {
       const errors = []
       if (!this.$v.form.newPassword.$dirty) return errors
       !this.$v.form.newPassword.required && errors.push(this.$t('validations.requiredField'))
-      !this.$v.form.newPassword.minLength && errors.push(this.$t('validations.minCharacter', { n: 3 }))
-      !this.$v.form.newPassword.containsNumber && errors.push('Şifreniz en az 8 karakterden oluşmalı ve en az bir harf ve rakam içermelidir!')
+      !this.$v.form.newPassword.minLength && errors.push(this.$t('validations.minCharacter', { n: 8 }))
+     // !this.$v.form.newPassword.containsNumber && errors.push('Şifreniz en az 8 karakterden oluşmalı ve en az bir harf ve rakam içermelidir!')
 
       return errors
     },
