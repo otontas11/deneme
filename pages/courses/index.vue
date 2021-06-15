@@ -14,9 +14,9 @@ export default {
   },
   data(){
     return{
-      headerText:this.$t('myCourses.title'),
-      subText:this.$t('myCourses.subTitle'),
-      cover:require('@/static/cover.jpg')
+      headerText:this.$t('coursesPage.title'),
+      subText:this.$t('coursesPage.subTitle'),
+      cover:require('~/static/cover.jpg')
     }
   }
 }

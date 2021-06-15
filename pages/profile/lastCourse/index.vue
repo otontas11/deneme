@@ -1,13 +1,15 @@
 <template>
-<div>Last Course</div>
+  <list-lesson />
 </template>
 
 <script>
+import ListLesson from '../../../components/page/profile/lastCourse/List'
+
 export default {
-  name: 'profile-last-course'
+  name: 'profile-last-course',
+  components: {
+    ListLesson
+  }
 }
 </script>
 
-<style scoped>
-
-</style>
