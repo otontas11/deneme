@@ -14,9 +14,9 @@ export default {
   },
   data(){
     return{
-      headerText:this.$t('myQuestions.title'),
-      subText:this.$t('myQuestions.subTitle'),
-      btnText:this.$t('myQuestions.askYourQuestion'),
+      headerText:this.$t('questionsPage.title'),
+      subText:this.$t('questionsPage.subTitle'),
+      btnText:this.$t('questionsPage.askYourQuestion'),
       cover:require('@/static/cover.jpg')
   }
   }

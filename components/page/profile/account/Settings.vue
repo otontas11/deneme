@@ -1,16 +1,16 @@
 <template>
-  <v-card elevation='6' rounded='lg' class='mb-3'>
+  <v-card elevation='6' rounded='lg' class='mb-3 pa-5'>
     <v-card-title>{{$t('settings.accSettings')}}</v-card-title>
     <v-card-text>
-      <v-divider></v-divider>
+      <v-divider class='mb-2'></v-divider>
 
-      <v-form autocomplate='off' class='px-4 pt-4 px-md-6 pt-md-6'>
+      <v-form autocomplate='off' class='pt-4 pt-md-6'>
 
         <v-row>
 
           <v-col cols='12' md='6'>
 
-            <v-text-field v-model='form.email' class="mb-2" label='Mail' outlined :error-messages='emailErrors' />
+            <v-text-field v-model='form.email' class="mb-2" label='Mail'  outlined :error-messages='emailErrors' />
 
             <v-text-field v-model='form.nameSurname' class="mb-2" label='Name' outlined :error-messages='nameSurnameErrors' />
 

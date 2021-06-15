@@ -1,5 +1,5 @@
 <template>
-  <v-footer dark padless style='top: 100%'>
+  <v-footer dark padless >
 
     <v-card class='d-flex primary' flat tile
             :height="$vuetify.breakpoint.mdAndUp?'176':'48'"

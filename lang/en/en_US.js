@@ -12,6 +12,7 @@ export default {
   dontHaveAccount:                                                  'Don‘t have an account ? ',
   forgetPassword:                                                   'Forget Password',
   welcome:                                                          'Welcome',
+  startDate:                                                        'You\'re started at',
 
 
   navbar:{
@@ -43,7 +44,13 @@ export default {
     viewCourse:                                                   'View Course'
   },
 
-  questions:{
+  coursesPage:{
+    title:                                                        'Courses',
+    subTitle:                                                     'Is a free online education service run by The Foundation of Light Spirituality and Arts - a local charity based in the UK. We aim to deliver free, online and quality education for all those who are interested in Islam.',
+    viewCourse:                                                   'View Course'
+  },
+
+  questionsPage:{
     title:                                                        'Questions',
     subTitle:                                                     'Is a free online education service run by The Foundation of Light Spirituality and Arts - a local charity based in the UK. We aim to deliver free, online and quality education for all those who are interested in Islam.',
     askYourQuestion:                                              'Ask your question',
@@ -58,7 +65,13 @@ export default {
 
   settings:{
     update:                                                        'Update',
-    accSettings:                                                   'Account Settings'
+    accSettings:                                                   'Account Settings',
+    myQuestions:                                                   'My Questions'
+
+  },
+
+  lastCourse:{
+    title:                                                          'My 1:1 Courses'
   }
 
 }
