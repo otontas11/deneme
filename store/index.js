@@ -1,5 +1,5 @@
 export const state = () => ({
-  profileToggle: false,
+  profileMobileToggle: true,
   app: {
     logo: require('@/static/logo.svg'),
     site_name: 'islamForBeginners',
@@ -19,7 +19,7 @@ export const state = () => ({
 export const mutations = {
 
   showHideProfile(state, val) {
-    state.profileToggle = val
+    state.profileMobileToggle = val
   }
 
 }
