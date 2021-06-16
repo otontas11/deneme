@@ -1,15 +1,16 @@
 <template>
-  <v-menu transition='slide-y-transition'
+  <v-menu transition='slide-y-transition full-width'
 
-          offset-y open-on-hover rounded='lg'>
+          offset-y :open-on-hover='$vuetify.breakpoint.mdAndUp' rounded='lg'>
 
     <template #activator='{ on }'>
-      <v-btn text rounded outlined class='mr-1 px-2 soft--text' min-width='auto' :height='40' v-on='on'>
+      <v-btn text rounded outlined class='mr-1 px-2 soft--text language' :class='fillWidth' min-width='auto'
+             :height='$vuetify.breakpoint.mdAndUp?40:48' v-on='on'>
 
                 <span class='pr-md-2 pl-2 pl-md-0'
                       :class="{'text-transform-none': $vuetify.breakpoint.smAndDown}"
                       v-text='localeName($i18n.locale)' />
-        <v-icon right  dark >
+        <v-icon right dark>
           mdi-menu-down
         </v-icon>
 
@@ -44,6 +45,11 @@
 <script>
 export default {
   name: 'Language',
+  props: {
+    fillWidth: {
+      type: String
+    }
+  },
   methods: {
 
     setLang(lang) {
@@ -65,3 +71,17 @@ export default {
   }
 }
 </script>
+
+<style lang='scss' scoped>
+@media (max-width: 959.8px) {
+
+  .v-btn.language {
+    width: 100%;
+    justify-content: space-between;
+    border: 1px solid #EBEEF3 !important;
+
+  }
+
+}
+
+</style>

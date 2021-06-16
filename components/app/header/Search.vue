@@ -5,6 +5,7 @@
                   cache-items outlined
                   label='Search'
                   hide-details
+                  :height='40'
                   flat solo class='mx-4'
                   append-icon='mdi-arrow'>
 

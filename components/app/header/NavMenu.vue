@@ -25,17 +25,17 @@
 
       </v-btn>
 
-      <v-btn rounded text plain
+<!--      <v-btn rounded text plain
              :to='localePath("profile", $i18n.locale)'
              @click='checkClick("profile")'
-             exact-active-class='secondary--text'
+             exact-active-class='secondary&#45;&#45;text'
              class='mainNav'>
 
         <v-icon v-text='`mdi-account-outline` ' :size='18' />
 
         <span class='caption text-uppercase'> {{ $t('navbar.profile') }} </span>
 
-      </v-btn>
+      </v-btn>-->
 
     </template>
 

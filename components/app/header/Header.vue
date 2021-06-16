@@ -3,7 +3,7 @@
 
     <v-container class='d-flex align-center justify-space-between px-0 px-md-3'>
 
-      <app-header-logo />
+      <header-logo />
 
       <client-only>
 
@@ -11,12 +11,15 @@
 
           <template>
             <template v-if='$vuetify.breakpoint.mdAndUp'>
-              <app-header-nav-menu />
-              <app-header-search />
-              <app-header-language />
+              <header-nav-menu />
+              <header-search />
+              <header-language />
             </template>
 
-            <app-header-register />
+            <template>
+              <header-register v-if='!$store.state.profile.userLogged' />
+              <profile-btn v-else />
+            </template>
 
           </template>
 
@@ -29,8 +32,18 @@
 </template>
 
 <script>
+import HeaderLogo from '~/components/app/header/Logo'
+import HeaderNavMenu from '~/components/app/header/NavMenu'
+import HeaderSearch from '~/components/app/header/Search'
+import HeaderLanguage from '~/components/app/header/Language'
+import HeaderRegister from '~/components/app/header/Register'
+import ProfileBtn from '~/components/app/header/ProfileBtn'
+
 export default {
-  name: 'Header'
+  name: 'Header',
+  components: {
+    HeaderLogo, HeaderNavMenu, HeaderSearch, HeaderLanguage, HeaderRegister, ProfileBtn
+  }
 }
 </script>
 

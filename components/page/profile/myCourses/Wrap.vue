@@ -1,5 +1,5 @@
 <template>
-  <v-card elevation='6' rounded='lg' class='mb-3'>
+  <div>
 
     <v-card-title>{{ $t('settings.accSettings') }}</v-card-title>
 
@@ -7,13 +7,13 @@
 
       <v-divider class='mb-4' />
 
-      <template v-for='i in 1'>
+      <template v-for='i in 5'>
         <course-card />
       </template>
 
     </v-card-text>
 
-  </v-card>
+  </div>
 </template>
 
 <script>

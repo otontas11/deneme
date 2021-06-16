@@ -6,12 +6,12 @@ export const state = () =>  ({
       icon: 'home'
     },
     {
-      path: '/myCourses',
+      path: '/courses',
       name: 'navbar.myCourses',
       icon: 'menu'
     },
     {
-      path: '/myQuestions',
+      path: '/questions',
       name: 'navbar.myQuestions',
       icon: 'forum'
     }

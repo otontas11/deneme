@@ -1,15 +1,19 @@
 <template>
-<div>
-  my questions
-</div>
+ <div>
+   <wrap-my-questions/>
+ </div>
+
 </template>
 
 <script>
+import WrapMyQuestions from '@/components/page/profile/myQuestions/Wrap'
 export default {
-  name: 'profile-my-questions'
+  name: 'profile-my-questions',
+  components:{
+    WrapMyQuestions
+  }
+
 }
 </script>
 
-<style scoped>
 
-</style>

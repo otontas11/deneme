@@ -138,10 +138,10 @@ export default {
     return {
 
       form: {
-        email: null,
+        email: 'oktay@gmail.com',
         newEmail:null,
         nameSurname: null,
-        password: null,
+        password: '123456789',
         newPassword: null,
         passwordCheck: null
       },
@@ -160,6 +160,7 @@ export default {
         if (!this.$v.form.$anyError) {
 
           this.$router.push(this.localePath('profile',this.$i18n.locale))
+          this.$store.commit('profile/isUserLogged',true)
           this.dialog=false
 
         }
