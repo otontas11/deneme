@@ -1,5 +1,5 @@
 <template>
-  <v-card elevation='6' class='mb-3 pa-1 pa-md-5'>
+  <div>
 
     <v-card-title>{{ $t('settings.accSettings') }}</v-card-title>
 
@@ -13,7 +13,7 @@
 
     </v-card-text>
 
-  </v-card>
+  </div>
 </template>
 
 <script>

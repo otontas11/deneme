@@ -3,24 +3,31 @@
 
     <general-cover :height='273' v-if='$vuetify.breakpoint.smAndUp' />
 
-    <v-container class='relative z-index-2' :class="$vuetify.breakpoint.smAndUp?'positionFix':'mt-2'">
+    <v-container class='relative z-index-2' :class="$vuetify.breakpoint.smAndUp ? 'positionFix' : 'mt-2'">
       <v-row>
 
         <v-col cols='12' md='3'>
 
-          <!--
-           <v-card class='pa-5'>
-            <div v-if='$vuetify.breakpoint.mdAndDown'>oktay</div>
-            <div v-if='$vuetify.breakpoint.smAndDown'>tontas</div>
-            <div v-if='$vuetify.breakpoint.xs'>tnts</div>
-          </v-card>-->
+          <template v-if='$vuetify.breakpoint.smAndDown ? mobile : true'>
+            <user-card />
+          </template>
 
-          <user-card />
         </v-col>
 
+        <v-col cols='12' md='9'>
+          <template v-if='$vuetify.breakpoint.smAndDown ? !mobile : true'>
 
-        <v-col cols='12' md='9' >
-          <nuxt-child />
+            <v-card elevation='6' class='mb-3 pa-5'>
+
+              <div v-if='$vuetify.breakpoint.smAndDown' @click='showUserCard' class='pointer'>
+                <v-icon v-text="'mdi-arrow-left'" />
+              </div>
+
+              <nuxt-child />
+
+            </v-card>
+
+          </template>
         </v-col>
 
       </v-row>
@@ -36,15 +43,24 @@ import GeneralCover from '~/components/global/GeneralCover'
 
 export default {
   name: 'profile',
+
   components: {
     GeneralCover,
     UserCard
   },
-  computed:{
-    toggleProfileMobile(){
-      return this.$store.state.profileToggle
+
+  computed: {
+    mobile() {
+      return this.$store.state.profileMobileToggle && ['xs', 'sm'].includes(this.$vuetify.breakpoint.name)
+    }
+  },
+
+  methods: {
+    showUserCard() {
+      this.$store.commit('showHideProfile', true)
     }
   }
+
 }
 </script>
 

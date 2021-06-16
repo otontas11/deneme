@@ -1,5 +1,5 @@
 <template>
-  <v-footer dark padless >
+  <v-footer dark padless>
 
     <v-card class='d-flex primary' flat tile
             :height="$vuetify.breakpoint.mdAndUp?'176':'48'"
@@ -8,8 +8,8 @@
       <v-container class='d-flex align-center justify-space-between px-0 px-md-3'>
         <client-only>
 
-          <app-header-logo v-if='$vuetify.breakpoint.mdAndUp' />
-          <app-header-nav-menu />
+          <header-logo v-if='$vuetify.breakpoint.mdAndUp' />
+          <header-nav-menu />
 
           <icons v-if='$vuetify.breakpoint.mdAndUp' />
 
@@ -22,11 +22,13 @@
 
 <script>
 import Icons from '~/components/global/socialMedia/Icons'
+import HeaderLogo from '~/components/app/header/Logo'
+import HeaderNavMenu from '~/components/app/header/NavMenu'
 
 export default {
   name: 'index',
   components: {
-    Icons
+    Icons, HeaderLogo, HeaderNavMenu
   }
 
 }

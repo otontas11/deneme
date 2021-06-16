@@ -1,6 +1,6 @@
 <template>
 
-  <v-card elevation='6' class='mb-3 pa-5'>
+  <div>
 
     <v-card-title>{{ $t('lastCourse.title') }}</v-card-title>
 
@@ -19,7 +19,7 @@
 
     </v-card-text>
 
-  </v-card>
+  </div>
 
 </template>
 
