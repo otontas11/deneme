@@ -17,13 +17,14 @@
     </template>
 
     <template v-if='$vuetify.breakpoint.smAndDown'>
+      <search-detailed/>
 
-      <v-btn rounded text plain class='mainNav'>
+<!--      <v-btn rounded text plain class='mainNav'>
 
         <v-icon v-text='`mdi-magnify` ' :size='18' />
-        <span class='caption text-uppercase'> {{ $t('navbar.search') }} </span>
+        <span class='caption text-uppercase'> {{ $t('navbar.searchResult') }} </span>
 
-      </v-btn>
+      </v-btn>-->
 
 <!--      <v-btn rounded text plain
              :to='localePath("profile", $i18n.locale)'
@@ -45,9 +46,13 @@
 <script>
 
 import { mapState } from 'vuex'
+import SearchDetailed from '~/components/global/dialog/SearchDetailed'
 
 export default {
   name: 'NavMenu',
+  components:{
+    SearchDetailed
+  },
   data() {
     return {
       clicked: false

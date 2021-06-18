@@ -11,7 +11,7 @@
       <v-row>
         <v-col cols='12' md='4' sm='6' v-for='i in 5'>
 
-          <last-course-lesson-card :percent='percent' :title='title' :date='date' :btnName='btnName' :img='img' />
+          <last-course-lesson-card :percent='percent' :title='title' :startDate='startDate' :btnName='btnName' :img='img' />
 
         </v-col>
 
@@ -34,8 +34,9 @@ export default {
   data() {
     return {
       percent: '23',
+      percentType:'Comp.',
       title: 'The 5 Pillars of Islam lorem ipsum sit',
-      date: '21.04.2021',
+      startDate: '21.04.2021',
       btnName: this.$t('myCourses.viewCourse'),
       img: 'https://cdn.vuetifyjs.com/images/cards/cooking.png'
     }
