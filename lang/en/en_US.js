@@ -20,7 +20,8 @@ export default {
     myCourses:                                                      'Courses',
     myQuestions:                                                    'Questions',
     profile:                                                        'Profile',
-    search:                                                         'Search'
+    search:                                                         'Search',
+    searchResult:                                                         'Search',
   },
 
   validations:{
