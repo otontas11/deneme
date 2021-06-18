@@ -1,22 +1,20 @@
 <template>
-  <v-dialog v-model='dialog'  max-width='420' :fullscreen='$vuetify.breakpoint.smAndDown' persistent width='auto'
+  <v-dialog v-model='dialog' max-width='420' :fullscreen='$vuetify.breakpoint.smAndDown' persistent width='auto'
 
             :transition="$vuetify.breakpoint.smAndDown ? 'dialog-bottom-transition' : 'dialog-transition'">
 
     <template #activator='{ on, attrs }'>
 
-
-        <v-btn :class="{'fill-width':$vuetify.breakpoint.smAndDown}"
-               outlined :height='48' v-bind='attrs'
-               v-on='on'
-               color='secondary'>
-          {{ $t('questionsPage.askYourQuestion') }}
-        </v-btn>
-
+      <v-btn :class="{'fill-width':$vuetify.breakpoint.smAndDown}"
+             :outlined='outlined' :depressed='outlined' :height='height' v-bind='attrs'
+             v-on='on'
+             color='secondary'>
+        {{ $t('questionsPage.askYourQuestion') }}
+      </v-btn>
 
     </template>
 
-    <v-card >
+    <v-card>
 
       <v-card-title class='text-h5 lighten-2 font-weight-bold px-6 py-10'>
 
@@ -29,12 +27,12 @@
           <v-card-subtitle class='font-weight-bold'>ASK YOUR QUESTİON</v-card-subtitle>
 
           <v-col cols='12' class='mt-4'>
-            <v-textarea label='Ask Your Question'  v-model='question'
+            <v-textarea label='Ask Your Question' v-model='question'
                         outlined :error-messages='questionErrors' />
           </v-col>
 
           <v-col class='12'>
-            <v-btn color='primary' @click='askQuestion' :height='48'n class='fill-width'>
+            <v-btn color='primary' @click='askQuestion' :height='48' class='fill-width'>
               Ask
             </v-btn>
           </v-col>
@@ -54,6 +52,18 @@ import { minLength, required } from 'vuelidate/lib/validators'
 export default {
   name: 'AskQuestions',
   mixins: [validationMixin],
+  props: {
+    outlined: {
+      type: String,
+      default: true
+    },
+    height: {
+      type: Number,
+      default: 48
+    }
+
+
+  },
   data() {
     return {
       question: null,
