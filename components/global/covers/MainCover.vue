@@ -1,6 +1,6 @@
 <template>
   <v-card tag='section' tile class='main-cover primary d-flex'
-          :img="$vuetify.breakpoint.mdAndUp ? require('@/static/cover.jpg') :  require('@/static/cover-xs.jpg')">
+          :img="$vuetify.breakpoint.mdAndUp ? require('~/static/cover.jpg') :  require('~/static/cover-xs.jpg')">
 
       <v-overlay absolute color="#2D2B74" class='overlay'  />
 

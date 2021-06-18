@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import GeneralCover from '~/components/global/GeneralCover'
+import GeneralCover from '~/components/global/covers/GeneralCover'
 export default {
   name: 'Question-page',
   components:{
