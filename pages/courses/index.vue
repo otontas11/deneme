@@ -2,11 +2,15 @@
   <v-main>
    <general-cover v-if='$vuetify.breakpoint.mdAndUp'
                   :headerText='headerText' :subText='subText' :cover='cover' />
+
+
   </v-main>
 </template>
 
 <script>
+
 import GeneralCover from '~/components/global/covers/GeneralCover'
+
 export default {
   name: 'index',
   components:{
