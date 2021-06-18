@@ -1,8 +1,6 @@
 <template>
 
-
-  <v-card tag='section' tile :height='height' class='primary d-flex'
-          :img="cover">
+  <v-card tag='section' tile :height='height' class='primary d-flex' :img="cover">
 
     <v-overlay absolute color='#2D2B74' class='overlay' />
 
@@ -14,26 +12,30 @@
 
         <div class='my-6'>
           <p :class="$vuetify.breakpoint.mdAndUp?'subtitle-1':'subtitle-2'"
-             class='white--text mainText-general ' v-text='subText'>
+             class='white--text mainText-general ' v-text='subText' style="line-height: 1">
           </p>
         </div>
       </div>
 
-      <div class='d-flex justify-center' v-if='showBtn'>
+<!--      <div class='d-flex justify-center' v-if='showBtn'>
         <v-btn depressed color='secondary'>
           {{ btnText }}
         </v-btn>
-      </div>
+      </div>-->
+      <ask-questions v-if='showBtn' :outlined="outlinedQuestionBtn" :height='questionHeight'/>
 
     </v-container>
-
 
   </v-card>
 </template>
 
 <script>
+import AskQuestions from '~/components/global/dialog/AskQuestions'
 export default {
   name: 'GeneralCover',
+  components:{
+    AskQuestions
+  },
   props: {
     cover: {
       type: String
@@ -54,7 +56,9 @@ export default {
   },
   data() {
     return {
-      showBtn: false
+      showBtn: false,
+      outlinedQuestionBtn:false,
+      questionHeight:"40"
     }
   },
   created() {
