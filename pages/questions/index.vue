@@ -3,8 +3,11 @@
     <general-cover v-if='$vuetify.breakpoint.mdAndUp'
                    :cover='cover' :headerText='headerText' :subText='subText' :btnText='btnText' />
 
-    <v-container>
+    <v-container class='py-6 py-md-16 '>
+
+      <h3 v-if='$vuetify.breakpoint.smAndDown' v-text='headerText' class='text-h5   mb-6  mt-4 mt-mb-10 font-weight-bold font-weight-500' />
       <questions-list />
+
     </v-container>
 
   </v-main>

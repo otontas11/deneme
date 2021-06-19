@@ -1,24 +1,21 @@
 <template>
-  <v-card class='mx-auto mb-6 pa-6 '  :class="{'transparent':hideDetails}"  :elevation= "!hideDetails?1:0">
+  <v-card class='mx-auto mb-6 pa-6 ' :class="{'transparent':hideDetails}" :elevation='!hideDetails?1:0'>
 
     <v-card-title class='pa-0 mb-4'>
-      <template v-if='$vuetify.breakpoint.mdAndUp||hideDetails'>
+      <template>
         <v-avatar size='36' color='gray'>
           ii
         </v-avatar>
-        <div>
-         <span class='ml-3 d-block subtitle-2 ' style='margin-bottom: -4px'>
-       Enes Aktaş
-      </span>
-          <span class='ml-3 d-block' style='font-size: 10px;margin-top: -4px'>
-      Asked 2 days ago
-      </span>
-        </div>
+
+        <span class='ml-3 d-block subtitle-2 '>  Enes Aktaş  </span>
+        <v-spacer v-if='$vuetify.breakpoint.smAndDown' />
+        <span class='ml-3 d-block ' style='font-size: 10px'> Asked 2 days ago  </span>
 
       </template>
 
     </v-card-title>
-    <v-card class='gray px-4 py-4' >
+
+    <v-card class='gray px-4 py-4'>
       Kainat Hz. Muhammed’in (asm) hürmetine mi yaratıldı?
     </v-card>
 
@@ -34,7 +31,9 @@
       <div class='fill-width mb-0'>
         <v-btn :class="{'fill-width':$vuetify.breakpoint.smAndDown}" color='secondary ' outlined @click='goToPage'
                :height='40'>
-          Read More
+          <span v-if='$vuetify.breakpoint.mdAndUp'>   Read More</span>
+          <span v-else>   Read Answer</span>
+
         </v-btn>
       </div>
 
@@ -48,27 +47,23 @@
 <script>
 export default {
   name: 'QuestionCard',
-  props:{
-    path:{
-      type:String
+  props: {
+    path: {
+      type: String
     },
-    hideDetails:{
-      type:Boolean,
-      default:false
+    hideDetails: {
+      type: Boolean,
+      default: false
     }
   },
 
-    methods: {
-      async goToPage() {
+  methods: {
+    async goToPage() {
 
-        await this.$router.push(this.path)
+      await this.$router.push(this.path)
 
-      }
     }
+  }
 
 }
 </script>
-
-<style scoped>
-
-</style>

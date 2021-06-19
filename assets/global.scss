@@ -175,6 +175,13 @@ u, .text-underline {
     }
   }
 
+  .borderless{
+    border: none!important;
+  }
+  .hide-border-radius{
+    border-radius: initial!important;
+  }
+
 
   .v-text-field {
     &--outlined {

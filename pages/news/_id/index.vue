@@ -7,7 +7,7 @@
       <v-row>
         <v-col cols='12' md='9'>
           <template>
-            <v-card class='pa-6'>
+            <v-card class='pa-2 pa-md-6' :class="{'borderless':$vuetify.breakpoint.smAndDown}">
 
               <div v-if='$vuetify.breakpoint.smAndDown' @click='$router.go(-1)' class='pointer'>
                 <v-icon v-text="'mdi-arrow-left'" />
