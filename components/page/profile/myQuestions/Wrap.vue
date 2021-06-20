@@ -1,10 +1,16 @@
 <template>
   <div>
 
-    <div class='d-flex justify-space-between'>
-      <v-card-title>{{ $t('settings.myQuestions') }}</v-card-title>
-      <ask-questions  v-if='$vuetify.breakpoint.mdAndUp'/>
-    </div>
+    <v-row>
+      <v-col cols='12' md='9'>
+        <v-card-title>{{ $t('settings.myQuestions') }}</v-card-title>
+
+      </v-col>
+      <v-col cols='12' md='3'>
+        <ask-questions v-if='$vuetify.breakpoint.mdAndUp' />
+      </v-col>
+
+    </v-row>
 
     <v-card-text>
 
@@ -21,7 +27,7 @@
 
         <v-tab-item class='mt-4'>
           <v-row>
-            <v-col cols='12' md='6' lg='3' v-for='i in 5'>
+            <v-col cols='12' md='6' lg='4' v-for='i in 5'>
               <question-card :key='i' />
 
             </v-col>
@@ -40,16 +46,13 @@
 
     </v-card-text>
 
-    <div class='ml-4'>
-      <ask-questions v-if='$vuetify.breakpoint.smAndDown' />
-    </div>
-
   </div>
 </template>
 
 <script>
 import QuestionCard from './Card'
 import AskQuestions from '~/components/global/dialog/AskQuestions'
+
 export default {
   name: 'Wrap',
   components: {
@@ -61,7 +64,7 @@ export default {
       tab: 0,
       items: ['Answered', 'Unanswered']
     }
-  },
+  }
 
 }
 </script>

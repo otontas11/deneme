@@ -3,7 +3,12 @@
 
     <general-cover v-if='$vuetify.breakpoint.mdAndUp'
                    :headerText='headerText' :subText='subText' :cover='cover' />
-    <news-list/>
+    <v-container class='py-6 py-md-16 '>
+
+      <news-list />
+
+    </v-container>
+
   </v-main>
 </template>
 
@@ -13,14 +18,14 @@ import NewsList from '~/components/page/news/List'
 
 export default {
   name: 'news-page',
-  components:{
-    GeneralCover,NewsList
+  components: {
+    GeneralCover, NewsList
   },
-  data(){
-    return{
-      headerText:this.$t('news.title'),
-      subText:this.$t('news.subTitle'),
-      cover:require('~/static/cover.jpg')
+  data() {
+    return {
+      headerText: this.$t('news.title'),
+      subText: this.$t('news.subTitle'),
+      cover: require('~/static/cover.jpg')
     }
   }
 }

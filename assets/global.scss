@@ -132,6 +132,11 @@ u, .text-underline {
     margin-bottom: initial !important;
   }
 
+  .v-responsive__content{
+    width: initial!important;
+  }
+
+
   .v-input input {
     max-height: 48px;
     height: 48px;
@@ -173,6 +178,13 @@ u, .text-underline {
     .v-label {
       top: 10px;
     }
+  }
+
+  .borderless{
+    border: none!important;
+  }
+  .hide-border-radius{
+    border-radius: initial!important;
   }
 
 

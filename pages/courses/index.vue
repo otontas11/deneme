@@ -1,7 +1,7 @@
 <template>
   <v-main>
    <general-cover v-if='$vuetify.breakpoint.mdAndUp'
-                  :headerText='headerText' :subText='subText' :cover='cover' />
+                  :headerText='headerText' :subText='subText' :cover='cover'   />
 
 
   </v-main>
@@ -20,7 +20,7 @@ export default {
     return{
       headerText:this.$t('coursesPage.title'),
       subText:this.$t('coursesPage.subTitle'),
-      cover:require('~/static/cover.jpg')
+      cover:require('~/static/cover.jpg'),
     }
   }
 }

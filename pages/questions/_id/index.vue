@@ -8,14 +8,13 @@
         <v-col cols='12' md='9'>
 
           <template>
-            <v-card class='pa-6'>
+            <v-card class='pa-2 pa-md-6' :class="{'borderless':$vuetify.breakpoint.smAndDown}">
 
               <div v-if='$vuetify.breakpoint.smAndDown' @click='$router.go(-1)' class='pointer'>
                 <v-icon v-text="'mdi-arrow-left'" />
               </div>
 
-              <question-card :hide-details='true'/>
-
+              <question-card :hide-details='true' class='mb-n3'/>
 
               <v-card-title>{{ newsTitle }}</v-card-title>
 
@@ -29,7 +28,7 @@
         <v-col cols='12' md='3' v-if='$vuetify.breakpoint.mdAndUp'>
           <template>
 
-            <ask-questions height='40' :outlined='false' />
+            <ask-questions :height='40' :outlined='false' />
 
             <span class='text-uppercase  my-4 d-block font-weight-bold white--text' style='font-size: 10px'>RELATED QUESTIONS</span>
 
