@@ -28,7 +28,7 @@
       <div class='font-weight-bold mb-2' v-if='$vuetify.breakpoint.mdAndUp'>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, rem.
       </div>
-      <div class='fill-width mb-0'>
+      <div class='fill-width mb-n4'>
         <v-btn :class="{'fill-width':$vuetify.breakpoint.smAndDown}" color='secondary ' outlined @click='goToPage'
                :height='40'>
           <span v-if='$vuetify.breakpoint.mdAndUp'>   Read More</span>

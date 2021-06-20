@@ -11,8 +11,8 @@
     </v-row>
 
 
-    <v-card class='d-flex primary' flat tile
-            :height="$vuetify.breakpoint.mdAndUp?'176':'48'"
+    <v-card class='d-flex primary borderless' flat tile
+            :height="$vuetify.breakpoint.mdAndUp?'176':''"
             width='100%'>
 
       <v-container class='d-flex align-center justify-space-between px-0 px-md-3'>

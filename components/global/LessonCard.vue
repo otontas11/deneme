@@ -47,7 +47,7 @@
 
         <v-card-text v-if='subTitle' class='mb-n4'  >{{ subTitle }}</v-card-text>
 
-        <ul v-for='(list,i) in listTitles' class='ml-2 ml-md-6'>
+        <ul v-for='(list,i) in listTitles' class='ml-2 ml-md-6 body-2'>
           <li :key='`list-${i}`'>{{ list }}</li>
         </ul>
 
