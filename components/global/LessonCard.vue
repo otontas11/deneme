@@ -31,28 +31,28 @@
 
       <div class='px-2'>
 
-      <span v-if='endDate && $vuetify.breakpoint.mdAndUp' class=' text-uppercase font-weight-bold d-block  ml-4 mt-6 '
+      <span v-if='endDate && $vuetify.breakpoint.mdAndUp' class=' text-uppercase font-weight-bold d-block  ml-4 mt-4 '
             style='font-size: 10px'>
         TILL {{ endDate }}
 
       </span>
-        <span v-if='date && $vuetify.breakpoint.mdAndUp' class=' text-uppercase font-weight-bold d-block  ml-4 mt-6 '
+        <span v-if='date && $vuetify.breakpoint.mdAndUp' class=' text-uppercase font-weight-bold d-block  ml-4 mt-4 '
               style='font-size: 10px'>
       {{ date }}
       </span>
 
-        <v-card-title :class="{'py-1 px-1' : $vuetify.breakpoint.smAndDown}" style='line-height: 25px'>{{ title }}
+        <v-card-title :class="{'py-1 px-1' : $vuetify.breakpoint.smAndDown}" style='line-height: 25px;font-size: 16px'>
+          {{ title }}
         </v-card-title>
-        <v-card-text v-if='subTitle' style='margin-bottom: -2rem'>{{ subTitle }}</v-card-text>
 
-        <ul v-for='(list,i) in listTitles' class='ml-2 ml-md-6'>
+        <v-card-text v-if='subTitle' class='mb-n4'  >{{ subTitle }}</v-card-text>
+
+        <ul v-for='(list,i) in listTitles' class='ml-2 ml-md-6 body-2'>
           <li :key='`list-${i}`'>{{ list }}</li>
         </ul>
 
-        <v-card-text style='margin-bottom: -8px'>
-
-          <template>
-            <div class='text-subtitle-2 text-uppercase' v-if='startDate'>
+          <template v-if='startDate'>
+            <div class='text-subtitle-2 text-uppercase'>
               {{ $t('startDate') }}
             </div>
 
@@ -60,8 +60,6 @@
               {{ startDate }}
             </div>
           </template>
-
-        </v-card-text>
 
       </div>
 
@@ -118,7 +116,7 @@ export default {
   methods: {
     async goToPage() {
 
-        await this.$router.push(this.path)
+      await this.$router.push(this.path)
 
     }
   }
@@ -134,6 +132,6 @@ export default {
 }
 
 .v-responsive__content {
-  width: initial!important;
+  width: initial !important;
 }
 </style>

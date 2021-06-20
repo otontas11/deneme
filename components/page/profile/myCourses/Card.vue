@@ -23,7 +23,7 @@
               <div class='d-flex' :class="{'justify-space-between':$vuetify.breakpoint.xsOnly}">
 
                 <div class='date d-flex flex-column' :class="{'align-end':$vuetify.breakpoint.smAndUp}">
-                  <span class='subheading font-weight-600'>You’re started at</span>
+                  <span class='subheading font-weight-600 font-size-10 text-uppercase'  >You’re started at</span>
                   <span class='subheading'>21.04.2021</span>
                 </div>
                 <div class='progressBar mx-4'>
@@ -32,8 +32,14 @@
                                        :width='4'
                                        :value='value'
                                        color='#31BC81'>
-                    {{ value }}
+                    <div class='d-flex flex-column align-center mt-1'>
+                      <span class='black--text caption ' style='margin-bottom: -8px'> %{{ value }}</span>
+                      <span class='black--text mb-1 mt-1 ' style='font-size: 10px'> comp.</span>
+                    </div>
+
                   </v-progress-circular>
+
+
                 </div>
 
               </div>

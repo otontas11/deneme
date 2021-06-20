@@ -13,7 +13,7 @@
     <v-divider />
 
     <v-container>
-      <v-tabs-items v-model='tab' class='pl-4'>
+      <v-tabs-items v-model='tab' >
 
         <v-tab-item>
           <courses-result/>
@@ -53,5 +53,8 @@ export default {
 </script>
 
 <style scoped>
+.v-responsive__content{
+  width: initial!important;
+}
 
 </style>

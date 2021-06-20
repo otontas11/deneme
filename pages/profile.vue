@@ -17,7 +17,7 @@
         <v-col cols='12' md='9'>
           <template v-if='$vuetify.breakpoint.smAndDown ? !mobile : true'>
 
-            <v-card elevation='6' class='mb-3 pa-5'>
+            <v-card elevation='6' class='mb-3 pa-5'  >
 
               <div v-if='$vuetify.breakpoint.smAndDown' @click='showUserCard' class='pointer'>
                 <v-icon v-text="'mdi-arrow-left'" />

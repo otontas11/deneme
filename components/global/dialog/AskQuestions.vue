@@ -5,9 +5,10 @@
 
     <template #activator='{ on, attrs }'>
 
-      <v-btn :class="{'fill-width':$vuetify.breakpoint.smAndDown}"
+      <v-btn :class="{'fill-width hide-border-radius' : $vuetify.breakpoint.smAndDown}"
              :outlined='outlined' :depressed='outlined' :height='height' v-bind='attrs'
              v-on='on'
+             class='fill-width'
              color='secondary'>
         {{ $t('questionsPage.askYourQuestion') }}
       </v-btn>
@@ -54,7 +55,7 @@ export default {
   mixins: [validationMixin],
   props: {
     outlined: {
-      type: String,
+      type: Boolean,
       default: true
     },
     height: {

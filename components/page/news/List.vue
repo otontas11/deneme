@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+
     <v-card class='transparent'>
 
       <div v-if='$vuetify.breakpoint.smAndDown' @click='$router.go(-1)' class='pointer mb-4'>
@@ -19,7 +19,6 @@
         </v-col>
       </v-row>
     </v-card>
-  </v-container>
 </template>
 
 <script>

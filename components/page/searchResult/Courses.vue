@@ -1,6 +1,6 @@
 <template>
   <v-row>
-       <v-col cols='12'  md='4' lg='3' sm='6' >
+       <v-col cols='12'  md='4' lg='3'  >
         <lesson-card :percent='percent'
                      :percent-type='percentType'
                      :title='title'

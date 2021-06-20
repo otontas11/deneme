@@ -2,10 +2,6 @@
 
   <v-card class='transparent'>
 
-    <div v-if='$vuetify.breakpoint.smAndDown' @click='$router.go(-1)' class='pointer mb-4'>
-      <v-icon v-text="'mdi-arrow-left'" />
-    </div>
-
     <v-row>
       <v-col cols='12' md='4' lg='3' sm='6' v-for='i in 6'>
 
@@ -13,6 +9,8 @@
 
       </v-col>
     </v-row>
+
+
   </v-card>
 
 </template>
@@ -29,7 +27,7 @@ export default {
   },
   data() {
     return {
-      path:'/questions/id'
+      path: '/questions/id'
     }
   }
 }

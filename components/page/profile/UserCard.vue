@@ -31,7 +31,6 @@
         <div class='fill-width '>
           <language-choice fillWidth='fill-width' />
         </div>
-
       </template>
 
     </v-list>
